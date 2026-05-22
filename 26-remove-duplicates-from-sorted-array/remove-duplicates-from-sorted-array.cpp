@@ -4,18 +4,17 @@ public:
          if(nums.size() == 0)
             return 0;
 
-        vector<int> ans;
         int size=nums.size();
-        ans.push_back(nums[0]);
-        for(int i =1;i<size;i++)
+        int i=0;
+        for(int j =1;j<size;j++)
         {
-            if(nums[i]!=ans.back())
+            if(nums[i]!=nums[j])
             {
-                ans.push_back(nums[i]);
+                i++;
+                nums[i]=nums[j];
             }
         }
-        nums=ans;
-
-        return ans.size();
+        i++;
+        return i;
     }
 };
